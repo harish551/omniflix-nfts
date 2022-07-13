@@ -1,0 +1,19 @@
+{
+  "name": "@harish551/omniflix-nfts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harish551/omniflix-nfts.git"
+  },
+  "keywords": [
+    "nfts",
+    "omniflix",
+    "cosmos"
+  ],
+  "author": "Harish Marri",
+  "license": "MIT"
+}
