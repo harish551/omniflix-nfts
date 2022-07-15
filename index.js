@@ -1,5 +1,14 @@
 const axios = require("axios").default;
 
+const isCollectionExists = async (apiAddress, collectionId) => {
+    const url = `${apiAddress}/omniflix/onft/v1beta1/denoms/${collectionId}`;
+    let response = await axios.get(url);
+    if (response.data && response.data.denom) {
+        return true
+    }
+    return false
+};
+
 const getNumOfCollectionsOwned = async (apiAddress, accountAddress) => {
     const url = `${apiAddress}/omniflix/onft/v1beta1/denoms?owner=${accountAddress}`;
     let response = await axios.get(url);
@@ -80,6 +89,7 @@ const getNumOfListingsOwned = async (apiAddress, denomId, accountAddress) => {
 };
 
 module.exports = {
+    isCollectionExists,
     getNumOfCollectionsOwned,
     getCollectionsByOwner,
     getNumOfNftsOwned,
