@@ -99,6 +99,7 @@ const getNumOfListingsOwned = async (apiAddress, denomId, accountAddress) => {
 
 module.exports = {
     isCollectionExists,
+    getCollection,
     getNumOfCollectionsOwned,
     getCollectionsByOwner,
     getNumOfNftsOwned,
