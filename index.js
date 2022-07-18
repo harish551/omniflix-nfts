@@ -9,6 +9,15 @@ const isCollectionExists = async (apiAddress, collectionId) => {
     return false
 };
 
+const getCollection = async (apiAddress, collectionId) => {
+    const url = `${apiAddress}/omniflix/onft/v1beta1/denoms/${collectionId}`;
+    let response = await axios.get(url);
+    if (response.data && response.data.denom) {
+        return response.data.denom
+    }
+    return null
+};
+
 const getNumOfCollectionsOwned = async (apiAddress, accountAddress) => {
     const url = `${apiAddress}/omniflix/onft/v1beta1/denoms?owner=${accountAddress}`;
     let response = await axios.get(url);
