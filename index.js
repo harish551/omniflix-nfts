@@ -22,7 +22,7 @@ const getNumOfCollectionsOwned = async (apiAddress, accountAddress) => {
     const url = `${apiAddress}/omniflix/onft/v1beta1/denoms?owner=${accountAddress}`;
     let response = await axios.get(url);
     if (response.data && response.data.denoms && response.data.denoms.length) {
-        return parseInt(response.data.pagination.total)
+        return parseInt(response.data.denoms.length)
     } else {
         return 0
     }
@@ -40,10 +40,10 @@ const getCollectionsByOwner = async (apiAddress, accountAddress) => {
 
 
 const getNumOfNftsOwned = async (apiAddress, denomId, accountAddress) => {
-    const url = `${apiAddress}/omniflix/onft/v1beta1/onfts/${denomId}/${accountAddress}`;
+    const url = `${apiAddress}/omniflix/onft/v1beta1/denoms/${denomId}/supply?owner=${accountAddress}`;
     let response = await axios.get(url);
-    if (response.data && response.data.collections && response.data.collections.length) {
-        return parseInt(response.data.pagination.total)
+    if (response.data && response.data.amount {
+        return parseInt(response.data.amount)
     } else {
         return 0
     }
